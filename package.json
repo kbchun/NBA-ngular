@@ -1,0 +1,23 @@
+{
+  "name": "2016-09-mvp",
+  "version": "1.0.0",
+  "description": "> Name the product in a way the reader (i.e. your target customers) will understand.   NBA-ngular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbchun/2016-09-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kbchun/2016-09-mvp/issues"
+  },
+  "homepage": "https://github.com/kbchun/2016-09-mvp#readme",
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
