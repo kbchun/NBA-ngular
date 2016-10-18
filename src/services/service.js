@@ -25,14 +25,21 @@ angular.module('server.request', [])
     return result[0].toUpperCase() + result.slice(1);
   };
 
-  var getTeamHeader = function(team) {
+  var getTeamGameIds = function(team) {
     return $http({
       method: 'POST',
       url: `${urlProBball}boxscore/team/${window.PRO_BASKETBALL_API}&team_id=${getTeamId(team)}&season=2015`
     });
   };
 
-  var getTeamGame = function(gameId) {
+  var getGameBoxscore = function(gameId) {
+    return $http({
+      method: 'POST',
+      url: `${urlProBball}boxscore/team/${window.PRO_BASKETBALL_API}&game_id=${gameId}`
+    });
+  };
+
+  var getTeamHeader = function(gameId) {
     return $http({
       method: 'POST',
       url: `${urlProBball}game/${window.PRO_BASKETBALL_API}&game_id=${gameId}&season=2015`
@@ -58,10 +65,11 @@ angular.module('server.request', [])
   };
 
   return {
-    getTeamHeader: getTeamHeader,
+    getTeamGameIds: getTeamGameIds,
     getTeamId: getTeamId,
     getTeamName: getTeamName,
-    getTeamGame: getTeamGame,
+    getTeamHeader: getTeamHeader,
+    getGameBoxscore: getGameBoxscore,
     getPlayerHeader: getPlayerHeader
   };
 });

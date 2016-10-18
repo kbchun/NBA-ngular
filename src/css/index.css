@@ -7,15 +7,17 @@
     font-style:none;
     font-weight:bold;
     background-color: lightgray;
-    width: 46%;
-}
-
-.fixed {
-    position: absolute;
-    top: 23%;
 }
 
 .scrollable {
   height: 500px;
   overflow-y: auto;
+}
+
+.game-list-container, .game-single-container {
+  margin-left: 20px !important;
+}
+
+.game-single-container {
+  margin-top: 55px;
 }
