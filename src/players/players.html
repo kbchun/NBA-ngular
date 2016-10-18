@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="player-list-container col s5">
+    <h4 ng-show="show_player_bool">Player: {{player}}</h4>
+      <ul>
+        <li ng-click="playerDetails(game)" ng-repeat="player in single_player_data">
+          <div></div>
+
+        </li>
+      </ul>
+    </div>
+
+    <div class="player-single-container col s4" ng-show="show_player_bool">
+      <game-single-info></game-single-info>
+    </div>
+
+  </div>
+</div>

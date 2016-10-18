@@ -1,0 +1,21 @@
+.options .team-input, .options .player-input {
+  margin:10px;
+  width:20%;
+}
+
+.bold {
+    font-style:none;
+    font-weight:bold;
+    background-color: lightgray;
+    width: 46%;
+}
+
+.fixed {
+    position: absolute;
+    top: 23%;
+}
+
+.scrollable {
+  height: 500px;
+  overflow-y: auto;
+}

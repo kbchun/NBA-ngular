@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>NBA-ngular</title>
   <script src="../node_modules/angular/angular.js"></script>
+  <script src="../node_modules/angular-route/angular-route.js"></script>
+  <script src="../node_modules/underscore/underscore.js"></script>
   <link href="./css/index.css" rel="stylesheet"></link>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <script src="./lib/jquery-3.1.1.min.js"></script>
@@ -13,15 +15,22 @@
   <div id="content" ng-app="index.app">
     <div ng-controller="index.controller">
       <div class="options row">
-        <input class="name-input " type="text" ng-model="search_input" ng-keyDown="search($event.keyCode)">
+        <input class="team-input " type="text" ng-model="team_search_input" ng-keyDown="search($event.keyCode)" placeholder="enter team here">
+        <input class="player-input " type="text" ng-model="player_search_input" ng-keyDown="search($event.keyCode)" placeholder="enter player here">
         <button class="waves-effect waves-light btn" ng-click="search()">Search</button>
       </div>
+      
+      <div ng-view></div>
+
     </div>
   </div>
 
+  <script src="./data/teamData.js"></script>
   <script src="./config/config.js"></script>
   <script src="./index.js"></script>
   <script src="./controllers/index_controller.js"></script>
+  <script src="./controllers/teams_controller.js"></script>
+  <script src="./controllers/players_controller.js"></script>
   <script src="./services/service.js"></script>
 </body>
 </html>

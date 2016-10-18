@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/kbchun/2016-09-mvp#readme",
   "dependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "underscore": "^1.8.3"
   }
 }
