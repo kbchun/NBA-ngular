@@ -47,11 +47,18 @@ angular.module('server.request', [])
     });
   };
 
-  var getPlayersStats = function(gameId) {
-    return $http({
-      method: 'POST',
-      url: `${urlProBball}boxscore/player/${window.PRO_BASKETBALL_API}&game_id=${gameId}`
-    });
+  var getPlayersStats = function(gameId, playerId) {
+    if (gameId === undefined) {
+      return $http({
+        method: 'POST',
+        url: `${urlProBball}boxscore/player/${window.PRO_BASKETBALL_API}&player_id=${playerId}&season=2015`
+      });
+    } else {
+      return $http({
+        method: 'POST',
+        url: `${urlProBball}boxscore/player/${window.PRO_BASKETBALL_API}&game_id=${gameId}`
+      });
+    }
   };
 
   var getPlayerProfile = function(first, last, team) {

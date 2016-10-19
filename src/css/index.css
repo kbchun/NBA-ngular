@@ -27,3 +27,11 @@
   border-top: 1pt solid gray;
   border-bottom: 1pt solid gray;
 }
+
+.name {
+  margin-left: 25%;
+}
+
+.name.bold {
+  width:40%;
+}
