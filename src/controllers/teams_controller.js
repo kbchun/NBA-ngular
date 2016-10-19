@@ -288,7 +288,7 @@ indexApp.directive('teamRoster', function() {
       <td align="center"><strong>+/-</strong></td>
       </tr>
       <tr ng-repeat="player in opponentRoster">
-      <td align="left"><a href="/src/#/player/{{teamName}}/{{player['first_name']}}_{{player['last_name']}}">{{player['full_name']}}</a></td>
+      <td align="left"><a href="/src/#/player/{{opponentName}}/{{player['first_name']}}_{{player['last_name']}}">{{player['full_name']}}</a></td>
       <td align="center">{{player.pts}}</td>
       <td align="right">{{player.fgm}}</td>
       <td align="center">{{player.fga}}</td>

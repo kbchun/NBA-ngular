@@ -89,7 +89,6 @@ indexApp.controller('players.controller', function($scope, $routeParams, TeamPla
           });
       }
     }
-    $scope.show_player_bool = true;
   };
 
   $scope.playerDetails = function(player, i) {
@@ -100,6 +99,7 @@ indexApp.controller('players.controller', function($scope, $routeParams, TeamPla
       .then(function(data) {
         $scope.single_player_data = data.data;
       });
+    $scope.show_player_bool = true;
   };
 
   $scope.filterName();
