@@ -1,8 +1,9 @@
 <div class="row">
   <div class="player-list-container col s5">
-    <h4 ng-show="show_player_bool">Player: {{player}}</h4>
+    <h4 ng-show="show_player_bool">Player: {{playerName}}</h4>
       <ul>
-        <li ng-click="playerDetails(game)" ng-repeat="player in single_player_data">
+        <li ng-click="playerDetails(player)" ng-repeat="player in player_data">
+          <img ng-src="{{player.pic}}"/>
           <div></div>
 
         </li>

@@ -7,6 +7,7 @@
     font-style:none;
     font-weight:bold;
     background-color: lightgray;
+    width: 65%;
 }
 
 .scrollable {
@@ -20,4 +21,9 @@
 
 .game-single-container {
   margin-top: 55px;
+}
+
+.categories {
+  border-top: 1pt solid gray;
+  border-bottom: 1pt solid gray;
 }

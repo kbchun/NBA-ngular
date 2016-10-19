@@ -15,15 +15,28 @@ indexApp.controller('index.controller', function($scope, $location, TeamPlayerIn
 
       // player search
       } else {
+        var name = $scope.player_search_input.replace('_', ' ');
+        var gapName = name.indexOf(' ');
+        if (gapName !== -1) {
+          var firstName = name.slice(0, gapName);
+          firstName = firstName[0].toUpperCase() + firstName.slice(1);
+          var lastName = name.slice(gapName + 1);
+          lastName = lastName[0].toUpperCase() + lastName.slice(1);
+        }
         if ($scope.team_search_input === '') {
-          $location.path(`/player/${$scope.player_search_input}`);
-        } else {
-          var teamId = TeamPlayerInfo.getTeamId($team_search_input);
-          if ($scope.player_search_input.indexOf(' ') === -1) {
-            $location.path(`/player/${teamId}/${$scope.player_search_input}`);
+          if (gapName !== -1) {
+            $location.path(`/player/_/${firstName}_${lastName}`);
+
           } else {
-            var gapName = $scope.player_search_input.replace(' ', '+');
-            $location.path(`/player/${teamId}/${gapName}`);
+            $location.path(`/player/_/${$scope.player_search_input}`);
+          }
+
+        } else {
+          if (gapName !== -1) {
+            $location.path(`/player/${$scope.team_search_input}/${firstName}_${lastName}`);
+            
+          } else {
+            $location.path(`/player/${$scope.team_search_input}/${$scope.player_search_input}`);
           }
         }
       }

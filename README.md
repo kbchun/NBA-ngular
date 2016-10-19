@@ -20,4 +20,4 @@ All you have to do is type in the team or player you're looking for and press se
 "NBA-ngular keeps me up to date on my favorite teams and players instantly! ESPN, Yahoo!, and other sports sites got nothing on NBA-ngular" -Satisfied Customer
 
 #Closing and Call to Action
-Many thanks to [Sport Radar](http://sportradar.us/) and [Pro Basketball API](https://probasketballapi.com/) for all the information and stats displayed in my product.
+Many thanks to [Pro Basketball API](https://probasketballapi.com/) for all the information and stats displayed in my product.

@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="game-list-container col s2">
-    <h4 ng-show="show_team_bool">Team: {{team}}</h4>
+  <div class="game-list-container col s3">
+    <h4 ng-show="show_team_bool">Team: {{teamName}}</h4>
     <h5>Games</h5>
     <ul class="scrollable">
       <li ng-click="gameDetails(game, {$index})" ng-repeat="game in game_headers">
@@ -13,9 +13,9 @@
     </ul>
   </div>
 
-  <div class="game-single-container col s8" ng-show="show_game_bool">
+  <div class="game-single-container col s7" ng-show="show_game_bool">
     <h5 class="col s12">Box Score</h5>
     <game-single-info></game-single-info>
-
+    <team-roster></team-roster>
   </div>
 </div>

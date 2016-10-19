@@ -3,6 +3,7 @@ angular.module('server.request', [])
 .factory('TeamPlayerInfo', function($http) {
   var teamName;
   var urlProBball = 'http://api.probasketballapi.com/';
+  var urlSportRadar = 'http://api.sportradar.us/';
   var urlPlayerPic = 'http://stats.nba.com/media/players/230x185/';
   var playerId;
   var teamId;
@@ -46,22 +47,56 @@ angular.module('server.request', [])
     });
   };
 
-  // var getRoster = function(team) {
-  //   return $http({
-  //     method: 'GET',
-  //     url: 
-  //   });
-  // };
-
-  var getPlayerHeader = function(first, last) {
+  var getPlayersStats = function(gameId) {
     return $http({
       method: 'POST',
-      url: `${urlProBball}player/${window.SPORT_RADAR_API}`
+      url: `${urlProBball}boxscore/player/${window.PRO_BASKETBALL_API}&game_id=${gameId}`
     });
   };
 
-  var displayPlayerPic = function() {
+  var getPlayerProfile = function(first, last, team) {
+    // only first is given
+    if (last === undefined && team === undefined) {
+      return $http({
+        method: 'POST',
+        url: `${urlProBball}player/${window.PRO_BASKETBALL_API}&first_name=${first}`
+      });
 
+    // only last is given
+    } else if (first === undefined && team === undefined) {
+      return $http({
+        method: 'POST',
+        url: `${urlProBball}player/${window.PRO_BASKETBALL_API}&last_name=${last}`
+      });
+
+    // first and team is given
+    } else if (last === undefined) {
+      return $http({
+        method: 'POST',
+        url: `${urlProBball}player/${window.PRO_BASKETBALL_API}&first_name=${first}&team_id=${team}`
+      });
+
+    // last and team is given
+    } else if (first === undefined) {
+      return $http({
+        method: 'POST',
+        url: `${urlProBball}player/${window.PRO_BASKETBALL_API}&last_name=${last}&team_id=${team}`
+      });
+
+    // first and last is given
+    } else if (team === undefined) {
+      return $http({
+        method: 'POST',
+        url: `${urlProBball}player/${window.PRO_BASKETBALL_API}&first_name=${first}&last_name=${last}`
+      });
+    }
+  };
+
+  var getPlayerHeader = function(playerId) {
+    return $http({
+      method: 'POST',
+      url: `${urlProBball}player/${window.PRO_BASKETBALL_API}&player_id=${playerId}`
+    });
   };
 
   return {
@@ -70,6 +105,8 @@ angular.module('server.request', [])
     getTeamName: getTeamName,
     getTeamHeader: getTeamHeader,
     getGameBoxscore: getGameBoxscore,
-    getPlayerHeader: getPlayerHeader
+    getPlayersStats: getPlayersStats,
+    getPlayerHeader: getPlayerHeader,
+    getPlayerProfile: getPlayerProfile
   };
 });
